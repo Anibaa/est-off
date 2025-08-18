@@ -18,7 +18,9 @@ const nextConfig = {
   generateEtags: true,
   trailingSlash: false,
   experimental: {
-    optimizeCss: true,
+    // Disable CSS optimization that relies on the optional "critters" package
+    // to avoid build failures when the dependency isn't available.
+    optimizeCss: false,
     optimizePackageImports: ['lucide-react', 'framer-motion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
     webVitalsAttribution: ['CLS', 'LCP'],
     scrollRestoration: true,
