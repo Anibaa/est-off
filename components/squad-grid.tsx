@@ -18,27 +18,39 @@ export function SquadGrid({ players }: SquadGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {players.map((player) => (
-        <Card key={player.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-          <div className="relative">
-            <img src={player.photo || "/placeholder.svg"} alt={player.name} className="w-full h-48 object-cover" />
-            <Badge className="absolute top-3 left-3 bg-est-rouge text-white font-bold text-lg">{player.number}</Badge>
+        <Card
+          key={player.id}
+          className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+        >
+          <div className="relative overflow-hidden">
+            <img
+              src={player.photo || "/placeholder.svg"}
+              alt={player.name}
+              className="w-full aspect-[3/4] object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <Badge className="absolute top-3 left-3 bg-est-rouge text-white font-bold text-lg shadow-lg">
+              {player.number}
+            </Badge>
+            <Badge className={`absolute top-3 right-3 text-xs shadow-lg ${getPositionColor(player.position)}`}>
+              {player.position}
+            </Badge>
           </div>
           <CardContent className="p-4">
             <div className="space-y-3">
               <div>
-                <h3 className="font-semibold text-lg">{player.name}</h3>
-                <Badge className={`text-xs ${getPositionColor(player.position)}`}>{player.position}</Badge>
+                <h3 className="font-semibold text-lg group-hover:text-est-rouge transition-colors">
+                  {player.name}
+                </h3>
+                <p className="text-sm text-muted-foreground">{player.nationality}</p>
               </div>
-              <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
-                <div>
+              <div className="flex justify-between text-sm text-muted-foreground">
+                <span>
                   <span className="font-medium">Âge:</span> {player.age} ans
-                </div>
-                <div>
-                  <span className="font-medium">Nationalité:</span> {player.nationality}
-                </div>
-                <div className="col-span-2">
+                </span>
+                <span>
                   <span className="font-medium">Arrivé en:</span> {player.joinedYear}
-                </div>
+                </span>
               </div>
             </div>
           </CardContent>
