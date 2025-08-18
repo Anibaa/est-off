@@ -1,9 +1,15 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Trophy, Star, Award } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useTranslation } from "@/lib/i18n"
 import { recentTrophies } from "@/lib/mock-data"
 
 export function PalmaresPreview() {
+  const { t } = useTranslation()
   const achievements = [
     { icon: Trophy, label: "Championnats nationaux", count: 32 },
     { icon: Star, label: "Coupes de Tunisie", count: 16 },
@@ -11,14 +17,14 @@ export function PalmaresPreview() {
   ]
 
   return (
-    <section className="space-y-6">
+    <section className="space-y-8">
       <div className="text-center space-y-2">
-        <h2 className="font-heading text-3xl font-bold">Palmarès</h2>
+        <h2 className="font-heading text-3xl font-bold">{t("palmares.title")}</h2>
         <p className="text-muted-foreground">Un siècle de succès et de trophées</p>
       </div>
 
       {/* Achievement stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {achievements.map((achievement) => (
           <Card key={achievement.label} className="text-center border-est-rouge/20">
             <CardContent className="p-6">
@@ -43,12 +49,14 @@ export function PalmaresPreview() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {recentTrophies.map((trophy) => (
               <div key={trophy.id} className="text-center space-y-3">
-                <img
+                <Image
                   src={trophy.image || "/placeholder.svg"}
                   alt={trophy.title}
+                  width={80}
+                  height={80}
                   className="w-20 h-20 mx-auto object-contain"
                 />
                 <div>
@@ -61,10 +69,11 @@ export function PalmaresPreview() {
           </div>
           <div className="text-center mt-6">
             <Button
+              asChild
               variant="outline"
               className="border-est-rouge text-est-rouge hover:bg-est-rouge hover:text-white bg-transparent"
             >
-              Voir tout le palmarès
+              <Link href="/palmares/tous">{t("palmares.viewAll")}</Link>
             </Button>
           </div>
         </CardContent>
