@@ -1327,6 +1327,10 @@ export const standings = footballStandings2024
 export const footballSquad = footballSquad2025
 export const articles = allNews
 export const recentTrophies: Trophy[] = allTrophies.slice(0, 6).sort((a, b) => b.year - a.year)
+export const handballSquad = handballSquad2025
+export const volleyballSquad = volleyballSquad2025
+export const handballTrophies = getTrophiesBySport("handball")
+export const volleyballTrophies = getTrophiesBySport("volleyball")
 
 // Utility functions for data access
 export function getFixturesBySport(sport: "football" | "volleyball" | "handball"): Fixture[] {

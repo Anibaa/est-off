@@ -1,24 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Source_Sans_3 as Source_Sans_Pro } from "next/font/google"
+import { GeistSans } from "geist/font/sans"
 import "./globals.css"
 import { StructuredDataScript } from "@/components/structured-data"
 import { generateSportsTeamStructuredData } from "@/lib/structured-data"
 import { ThemeProvider } from "next-themes"
 
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-heading",
-  weight: ["400", "700"],
-})
-
-const sourceSansPro = Source_Sans_Pro({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-body",
-  weight: ["400", "600"],
-})
+// Use the locally bundled Geist Sans font to avoid network requests during
+// build. This ensures the application can compile in environments without
+// external font access.
 
 export const metadata: Metadata = {
   title: "Espérance Sportive de Tunis - Site Officiel",
@@ -83,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={`${playfairDisplay.variable} ${sourceSansPro.variable}`} suppressHydrationWarning>
+    <html lang="fr" className={GeistSans.variable} suppressHydrationWarning>
       <head>
         <StructuredDataScript data={generateSportsTeamStructuredData()} />
         <link rel="icon" href="/favicon.ico" />
