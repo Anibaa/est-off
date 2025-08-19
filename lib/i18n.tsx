@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useState,
   type ReactNode,
 } from "react"
@@ -37,6 +38,18 @@ interface TranslationContextValue {
 
 const TranslationContext = createContext<TranslationContextValue | undefined>(undefined)
 
+function getBrowserLocale(): Locale | undefined {
+  if (typeof navigator === "undefined") return undefined
+  const languages = navigator.languages && navigator.languages.length > 0 ? navigator.languages : [navigator.language]
+  for (const lang of languages) {
+    const base = lang.split("-")[0]
+    if (locales.includes(base as Locale)) {
+      return base as Locale
+    }
+  }
+  return undefined
+}
+
 function getInitialLocale(): Locale {
   if (typeof window !== "undefined") {
     const urlParams = new URLSearchParams(window.location.search)
@@ -48,14 +61,20 @@ function getInitialLocale(): Locale {
     if (stored && locales.includes(stored as Locale)) {
       return stored as Locale
     }
+    const browser = getBrowserLocale()
+    if (browser) {
+      return browser
+    }
   }
   return defaultLocale
 }
 
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect
+
 export function TranslationProvider({ children }: { children: ReactNode }) {
   const [currentLocale, setCurrentLocale] = useState<Locale>(getInitialLocale)
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof document !== "undefined") {
       document.documentElement.lang = currentLocale
       document.documentElement.dir = localeDirections[currentLocale]
@@ -80,7 +99,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
   )
 
   return (
-    <TranslationContext.Provider
+    <TranslationContext.Provider 
       value={{
         locale: currentLocale,
         changeLocale,

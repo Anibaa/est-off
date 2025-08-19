@@ -1,7 +1,12 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Globe } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Check, Globe } from "lucide-react"
 import { locales, localeNames, useTranslation } from "@/lib/i18n"
 
 export function LanguageSwitcher() {
@@ -20,9 +25,10 @@ export function LanguageSwitcher() {
           <DropdownMenuItem
             key={locale}
             onClick={() => changeLocale(locale)}
-            className={currentLocale === locale ? "bg-accent" : ""}
+            className={`flex items-center justify-between ${currentLocale === locale ? "bg-accent" : ""}`}
           >
             {localeNames[locale]}
+            {currentLocale === locale && <Check className="ml-2 h-4 w-4" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
