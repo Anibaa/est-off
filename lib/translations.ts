@@ -15,6 +15,7 @@ export type TranslationKey =
   | "nav.tickets"
   | "nav.partners"
   | "nav.faq"
+  | "header.since"
   | "hero.title"
   | "hero.subtitle"
   | "hero.watchHighlights"
@@ -101,9 +102,11 @@ export type TranslationKey =
   | "common.reset"
   | "common.viewMore"
   | "common.backToTop"
+  | "theme.title"
   | "theme.light"
   | "theme.dark"
   | "theme.system"
+  | "theme.toggle"
 
 export const translations: Record<string, Record<TranslationKey, string>> = {
   fr: {
@@ -123,6 +126,7 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "nav.tickets": "Billetterie",
     "nav.partners": "Partenaires",
     "nav.faq": "FAQ",
+    "header.since": "Depuis 1919",
     "hero.title": "Espérance Sportive de Tunis",
     "hero.subtitle": "Un siècle de passion, de gloire et de légende",
     "hero.watchHighlights": "Voir les temps forts",
@@ -209,9 +213,11 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "common.reset": "Réinitialiser",
     "common.viewMore": "Voir plus",
     "common.backToTop": "Retour en haut",
+    "theme.title": "Thème",
     "theme.light": "Clair",
     "theme.dark": "Sombre",
     "theme.system": "Système",
+    "theme.toggle": "Changer de thème",
   },
   ar: {
     "nav.home": "الرئيسية",
@@ -230,6 +236,7 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "nav.tickets": "التذاكر",
     "nav.partners": "الشركاء",
     "nav.faq": "الأسئلة الشائعة",
+    "header.since": "منذ 1919",
     "hero.title": "الترجي الرياضي التونسي",
     "hero.subtitle": "قرن من الشغف والمجد والأسطورة",
     "hero.watchHighlights": "شاهد أهم اللحظات",
@@ -316,9 +323,11 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "common.reset": "إعادة تعيين",
     "common.viewMore": "عرض المزيد",
     "common.backToTop": "العودة إلى الأعلى",
+    "theme.title": "المظهر",
     "theme.light": "فاتح",
     "theme.dark": "داكن",
     "theme.system": "النظام",
+    "theme.toggle": "تبديل الوضع",
   },
   en: {
     "nav.home": "Home",
@@ -337,6 +346,7 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "nav.tickets": "Tickets",
     "nav.partners": "Partners",
     "nav.faq": "FAQ",
+    "header.since": "Since 1919",
     "hero.title": "Espérance Sportive de Tunis",
     "hero.subtitle": "A century of passion, glory and legend",
     "hero.watchHighlights": "Watch highlights",
@@ -423,9 +433,11 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "common.reset": "Reset",
     "common.viewMore": "View more",
     "common.backToTop": "Back to top",
+    "theme.title": "Theme",
     "theme.light": "Light",
     "theme.dark": "Dark",
     "theme.system": "System",
+    "theme.toggle": "Toggle theme",
   },
 }
 

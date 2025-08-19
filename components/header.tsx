@@ -1,20 +1,17 @@
 "use client"
-import { useState } from "react"
 import Link from "next/link"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Search } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { defaultLocale, type Locale } from "@/lib/i18n"
-import { getTranslation } from "@/lib/translations"
+import { useTranslation } from "@/lib/i18n"
 import { motion } from "framer-motion"
 
 export function Header() {
-  const [currentLocale, setCurrentLocale] = useState<Locale>(defaultLocale)
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
-
-  const t = (key: any) => getTranslation(currentLocale, key)
 
   const navItems = [
     { href: "/", label: t("nav.home") },
@@ -46,9 +43,9 @@ export function Header() {
             />
             <div className="hidden sm:block">
               <div className="font-heading text-md font-bold text-est-rouge group-hover:text-est-jaune transition-colors">
-                ESPERANCE SPORTIVE DE TUNIS
+                {t("hero.title")}
               </div>
-              <div className="text-xs text-muted-foreground">Since 1919</div>
+              <div className="text-xs text-muted-foreground">{t("header.since")}</div>
             </div>
           </Link>
 
@@ -78,7 +75,7 @@ export function Header() {
               <Search className="h-4 w-4" />
             </Button>
             <ThemeToggle />
-            <LanguageSwitcher currentLocale={currentLocale} onLocaleChange={setCurrentLocale} />
+            <LanguageSwitcher />
 
             {/* Mobile menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -111,7 +108,7 @@ export function Header() {
                   ))}
                   <div className="pt-4 border-t">
                     <div className="flex items-center justify-between px-4 py-2">
-                      <span className="text-sm font-medium">Theme</span>
+                      <span className="text-sm font-medium">{t("theme.title")}</span>
                       <ThemeToggle />
                     </div>
                   </div>

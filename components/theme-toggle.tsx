@@ -4,9 +4,11 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import { useTranslation } from "@/lib/i18n"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
+  const { t } = useTranslation()
 
   return (
     <Button
@@ -37,7 +39,7 @@ export function ThemeToggle() {
       >
         <Moon className="h-[1.2rem] w-[1.2rem]" />
       </motion.div>
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">{t("theme.toggle")}</span>
     </Button>
   )
 }
