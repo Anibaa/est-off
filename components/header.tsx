@@ -1,20 +1,17 @@
 "use client"
-import { useState } from "react"
 import Link from "next/link"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Search } from "lucide-react"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { defaultLocale, type Locale } from "@/lib/i18n"
-import { getTranslation } from "@/lib/translations"
+import { useTranslation } from "@/lib/i18n"
 import { motion } from "framer-motion"
 
 export function Header() {
-  const [currentLocale, setCurrentLocale] = useState<Locale>(defaultLocale)
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
-
-  const t = (key: any) => getTranslation(currentLocale, key)
 
   const navItems = [
     { href: "/", label: t("nav.home") },
@@ -78,7 +75,7 @@ export function Header() {
               <Search className="h-4 w-4" />
             </Button>
             <ThemeToggle />
-            <LanguageSwitcher currentLocale={currentLocale} onLocaleChange={setCurrentLocale} />
+            <LanguageSwitcher />
 
             {/* Mobile menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
