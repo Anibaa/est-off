@@ -589,6 +589,30 @@ export const footballSquad2025: Player[] = [
   },
 ]
 
+export const footballStaff: Staff[] = [
+  {
+    id: "staff1",
+    name: "Nabil Maaloul",
+    role: "Entraîneur principal",
+    photo: "/placeholder.svg?height=200&width=200",
+    experience: "5 ans à l'EST",
+  },
+  {
+    id: "staff2",
+    name: "Selim Ben Hassen",
+    role: "Entraîneur adjoint",
+    photo: "/placeholder.svg?height=200&width=200",
+    experience: "3 ans à l'EST",
+  },
+  {
+    id: "staff3",
+    name: "Ahmed Bejaoui",
+    role: "Préparateur physique",
+    photo: "/placeholder.svg?height=200&width=200",
+    experience: "2 ans à l'EST",
+  },
+]
+
 // Volleyball squad
 export const volleyballSquad2025: Player[] = [
   {

@@ -6,9 +6,9 @@ import { FixturesWidget } from "@/components/fixtures-widget"
 import { StandingsWidget } from "@/components/standings-widget"
 import { SquadGrid } from "@/components/squad-grid"
 import { StaffGrid } from "@/components/staff-grid"
-import { TrophiesGrid } from "@/components/trophies-grid"
+import { SocialMediaPosts } from "@/components/social-media-posts"
 import { SportNewsSection } from "@/components/sport-news-section"
-import { footballSquad, footballStaff, footballTrophies, footballFixtures, allNews } from "@/lib/mock-data"
+import { footballSquad, footballStaff, footballFixtures, allNews } from "@/lib/mock-data"
 
 export default function FootballPage() {
   const breadcrumbItems = [
@@ -52,8 +52,19 @@ export default function FootballPage() {
           </section>
 
 
+          {/* Staff */}
+          <section className="space-y-6">
+            <div className="text-center space-y-2">
+              <h2 className="font-heading text-3xl font-bold">Staff Technique</h2>
+              <p className="text-muted-foreground">Encadrement de l'équipe première</p>
+            </div>
+            <StaffGrid staff={footballStaff} />
+          </section>
+
 
         </div>
+        <SocialMediaPosts />
+
       </main>
       <Footer />
     </div>
