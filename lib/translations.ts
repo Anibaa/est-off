@@ -56,6 +56,11 @@ export type TranslationKey =
   | "palmares.national"
   | "palmares.continental"
   | "palmares.international"
+  | "palmares.subtitle"
+  | "palmares.recentTrophies"
+  | "palmares.achievements.nationalChampionships"
+  | "palmares.achievements.tunisiaCups"
+  | "palmares.achievements.continentalTitles"
   | "roster.title"
   | "roster.season"
   | "roster.position.goalkeeper"
@@ -159,6 +164,11 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "palmares.national": "National",
     "palmares.continental": "Continental",
     "palmares.international": "International",
+    "palmares.subtitle": "Un siècle de succès et de trophées",
+    "palmares.recentTrophies": "Derniers Trophées",
+    "palmares.achievements.nationalChampionships": "Championnats nationaux",
+    "palmares.achievements.tunisiaCups": "Coupes de Tunisie",
+    "palmares.achievements.continentalTitles": "Titres continentaux",
     "roster.title": "Effectif",
     "roster.season": "Saison",
     "roster.position.goalkeeper": "Gardien",
@@ -261,6 +271,11 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "palmares.national": "محلي",
     "palmares.continental": "قاري",
     "palmares.international": "دولي",
+    "palmares.subtitle": "قرن من النجاح والألقاب",
+    "palmares.recentTrophies": "آخر الألقاب",
+    "palmares.achievements.nationalChampionships": "بطولات الدوري الوطني",
+    "palmares.achievements.tunisiaCups": "كؤوس تونس",
+    "palmares.achievements.continentalTitles": "ألقاب قارية",
     "roster.title": "التشكيلة",
     "roster.season": "الموسم",
     "roster.position.goalkeeper": "حارس مرمى",
@@ -363,6 +378,11 @@ export const translations: Record<string, Record<TranslationKey, string>> = {
     "palmares.national": "National",
     "palmares.continental": "Continental",
     "palmares.international": "International",
+    "palmares.subtitle": "A century of success and trophies",
+    "palmares.recentTrophies": "Recent Trophies",
+    "palmares.achievements.nationalChampionships": "National Championships",
+    "palmares.achievements.tunisiaCups": "Tunisian Cups",
+    "palmares.achievements.continentalTitles": "Continental Titles",
     "roster.title": "Squad",
     "roster.season": "Season",
     "roster.position.goalkeeper": "Goalkeeper",

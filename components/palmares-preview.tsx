@@ -11,16 +11,16 @@ import { recentTrophies } from "@/lib/mock-data"
 export function PalmaresPreview() {
   const { t } = useTranslation()
   const achievements = [
-    { icon: Trophy, label: "Championnats nationaux", count: 32 },
-    { icon: Star, label: "Coupes de Tunisie", count: 16 },
-    { icon: Award, label: "Titres continentaux", count: 4 },
+    { icon: Trophy, label: t("palmares.achievements.nationalChampionships"), count: 32 },
+    { icon: Star, label: t("palmares.achievements.tunisiaCups"), count: 16 },
+    { icon: Award, label: t("palmares.achievements.continentalTitles"), count: 4 },
   ]
 
   return (
     <section className="space-y-8">
       <div className="text-center space-y-2">
         <h2 className="font-heading text-3xl font-bold">{t("palmares.title")}</h2>
-        <p className="text-muted-foreground">Un siècle de succès et de trophées</p>
+        <p className="text-muted-foreground">{t("palmares.subtitle")}</p>
       </div>
 
       {/* Achievement stats */}
@@ -45,7 +45,7 @@ export function PalmaresPreview() {
         <CardHeader className="bg-gradient-to-r from-est-rouge/10 to-est-jaune/10">
           <CardTitle className="flex items-center gap-2">
             <Trophy className="h-5 w-5 text-est-rouge" />
-            Derniers Trophées
+            {t("palmares.recentTrophies")}
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
