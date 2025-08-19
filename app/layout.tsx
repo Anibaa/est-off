@@ -5,6 +5,7 @@ import "./globals.css"
 import { StructuredDataScript } from "@/components/structured-data"
 import { generateSportsTeamStructuredData } from "@/lib/structured-data"
 import { ThemeProvider } from "next-themes"
+import { TranslationProvider, defaultLocale, localeDirections } from "@/lib/i18n"
 
 // Use the locally bundled Geist Sans font to avoid network requests during
 // build. This ensures the application can compile in environments without
@@ -73,7 +74,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fr" className={GeistSans.variable} suppressHydrationWarning>
+    <html
+      lang={defaultLocale}
+      dir={localeDirections[defaultLocale]}
+      className={GeistSans.variable}
+      suppressHydrationWarning
+    >
       <head>
         <StructuredDataScript data={generateSportsTeamStructuredData()} />
         <link rel="icon" href="/favicon.ico" />
@@ -84,7 +90,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
-          {children}
+          <TranslationProvider>{children}</TranslationProvider>
         </ThemeProvider>
       </body>
     </html>
