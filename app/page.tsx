@@ -3,6 +3,7 @@ import { NextMatchWidget } from "@/components/next-match-widget"
 import { MiniStandingsWidget } from "@/components/mini-standings-widget"
 import { LatestNewsSection } from "@/components/latest-news-section"
 import { SocialMediaPosts } from "@/components/social-media-posts"
+import { AroundClubSection } from "@/components/around-club-section"
 import { PalmaresPreview } from "@/components/palmares-preview"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Header } from "@/components/header"
@@ -21,6 +22,7 @@ export default function HomePage() {
           </div>
           <LatestNewsSection />
           <SocialMediaPosts />
+          <AroundClubSection />
           <PalmaresPreview />
           <NewsletterSignup />
         </div>
