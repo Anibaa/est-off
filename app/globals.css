@@ -5,11 +5,12 @@
 
 :root {
   /* Updated color tokens to match EST club colors (Rouge #E31E24, Jaune #FFD200) */
-  --background: oklch(1 0 0); /* White */
+  /* Use a softer white to reduce glare in light mode */
+  --background: oklch(0.985 0 0); /* Soft white */
   --foreground: oklch(0.145 0 0); /* Dark Grey #4b5563 equivalent */
-  --card: oklch(1 0 0); /* Light Grey #f9fafb equivalent */
+  --card: oklch(0.985 0 0); /* Light Grey #f9fafb equivalent */
   --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
+  --popover: oklch(0.985 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
