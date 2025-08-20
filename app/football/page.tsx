@@ -8,6 +8,7 @@ import { SquadGrid } from "@/components/squad-grid"
 import { StaffGrid } from "@/components/staff-grid"
 import { SocialMediaPosts } from "@/components/social-media-posts"
 import { SportNewsSection } from "@/components/sport-news-section"
+import FootballGallery from "@/components/football-gallery"
 import { footballSquad, footballStaff, footballFixtures, allNews } from "@/lib/mock-data"
 
 export default function FootballPage() {
@@ -60,6 +61,8 @@ export default function FootballPage() {
             </div>
             <StaffGrid staff={footballStaff} />
           </section>
+
+          <FootballGallery />
 
 
         </div>
