@@ -51,9 +51,21 @@ export function HeroSection() {
 
   return (
     <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-gradient-to-r from-est-rouge/90 to-est-rouge/70">
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 bg-est-rouge text-est-jaune px-4 py-1 rounded-full text-sm font-bold shadow">
-        Taraji Ya Dawla • <span dir="rtl" className="mx-1">نحن الترجي</span>
-      </div>
+
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="absolute top-6 left-1/2 -translate-x-1/2 z-20"
+      >
+        <div className="relative px-6 py-2">
+          <div className="absolute inset-0 bg-[length:200%_100%] bg-gradient-to-r from-est-rouge via-est-jaune to-est-rouge rounded-full shadow-lg animate-banner" />
+          <span className="relative block text-sm font-extrabold text-white drop-shadow">
+            Taraji Ya Dawla • <span dir="rtl" className="mx-1">نحن الترجي</span>
+          </span>
+        </div>
+      </motion.div>
+
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
