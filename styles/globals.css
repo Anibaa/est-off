@@ -122,3 +122,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes banner-scroll {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 200% 0%;
+  }
+}
+
+@layer utilities {
+  .animate-banner {
+    animation: banner-scroll 8s linear infinite;
+  }
+}
