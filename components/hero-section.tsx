@@ -51,6 +51,9 @@ export function HeroSection() {
 
   return (
     <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-gradient-to-r from-est-rouge/90 to-est-rouge/70">
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 bg-est-rouge text-est-jaune px-4 py-1 rounded-full text-sm font-bold shadow">
+        Taraji Ya Dawla • <span dir="rtl" className="mx-1">نحن الترجي</span>
+      </div>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
