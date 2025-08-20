@@ -51,6 +51,7 @@ export function HeroSection() {
 
   return (
     <section className="relative h-[70vh] min-h-[500px] overflow-hidden bg-gradient-to-r from-est-rouge/90 to-est-rouge/70">
+
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -64,6 +65,7 @@ export function HeroSection() {
           </span>
         </div>
       </motion.div>
+
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
