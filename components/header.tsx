@@ -40,10 +40,7 @@ export function Header() {
         <div className="relative text-white text-center font-heading text-sm sm:text-base font-extrabold tracking-widest uppercase py-1 drop-shadow-lg">
           Taraji Ya Dawla – <span dir="rtl" className="mx-1">نحن الترجي</span>
         </div>
-      </div>
-
-
-        </div>
+    </div>
 
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">

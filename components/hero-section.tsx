@@ -57,13 +57,14 @@ export function HeroSection() {
         transition={{ duration: 0.6 }}
         className="absolute top-6 left-1/2 -translate-x-1/2 z-20"
       >
-        <div className="relative px-6 py-2">
-          <div className="absolute inset-0 bg-[length:200%_100%] bg-gradient-to-r from-est-rouge via-est-jaune to-est-rouge rounded-full shadow-lg animate-banner" />
-          <span className="relative block font-heading text-base md:text-lg font-extrabold tracking-widest uppercase text-white drop-shadow-lg">
-          <span className="relative block text-sm font-extrabold text-white drop-shadow">
-            Taraji Ya Dawla • <span dir="rtl" className="mx-1">نحن الترجي</span>
-          </span>
-        </div>
+          <div className="relative px-6 py-2">
+            <div className="absolute inset-0 bg-[length:200%_100%] bg-gradient-to-r from-est-rouge via-est-jaune to-est-rouge rounded-full shadow-lg animate-banner" />
+            <span className="relative block font-heading text-base md:text-lg font-extrabold tracking-widest uppercase text-white drop-shadow-lg">
+              <span className="relative block text-sm font-extrabold text-white drop-shadow">
+                Taraji Ya Dawla • <span dir="rtl" className="mx-1">نحن الترجي</span>
+              </span>
+            </span>
+          </div>
       </motion.div>
 
       <AnimatePresence mode="wait">
