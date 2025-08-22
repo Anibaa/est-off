@@ -123,6 +123,7 @@
   }
 }
 
+
 @keyframes banner-scroll {
   from {
     background-position: 0% 0%;
@@ -137,3 +138,4 @@
     animation: banner-scroll 8s linear infinite;
   }
 }
+

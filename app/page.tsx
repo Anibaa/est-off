@@ -8,6 +8,7 @@ import { PalmaresPreview } from "@/components/palmares-preview"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { IdentityStrip } from "@/components/identity-strip"
 
 export default function HomePage() {
   return (
@@ -15,15 +16,21 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
+        <IdentityStrip />
         <div className="container mx-auto px-4 py-8 space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <NextMatchWidget />
             <MiniStandingsWidget />
           </div>
+          <IdentityStrip />
           <LatestNewsSection />
+          <IdentityStrip />
           <SocialMediaPosts />
+          <IdentityStrip />
           <AroundClubSection />
+          <IdentityStrip />
           <PalmaresPreview />
+          <IdentityStrip />
           <NewsletterSignup />
         </div>
       </main>
