@@ -36,10 +36,15 @@ export function Header() {
           aria-hidden
           className="absolute inset-0 bg-[length:200%_100%] bg-gradient-to-r from-est-rouge via-est-jaune to-est-rouge animate-banner"
         />
+
         <div className="relative text-white text-center font-heading text-sm sm:text-base font-extrabold tracking-widest uppercase py-1 drop-shadow-lg">
           Taraji Ya Dawla – <span dir="rtl" className="mx-1">نحن الترجي</span>
         </div>
       </div>
+
+
+        </div>
+
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
