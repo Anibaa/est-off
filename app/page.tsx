@@ -16,21 +16,21 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
-        <IdentityStrip />
+        <IdentityStrip variant="primary" />
         <div className="container mx-auto px-4 py-8 space-y-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <NextMatchWidget />
             <MiniStandingsWidget />
           </div>
-          <IdentityStrip />
+          <IdentityStrip variant="secondary" />
           <LatestNewsSection />
-          <IdentityStrip />
+          <IdentityStrip variant="primary" />
           <SocialMediaPosts />
-          <IdentityStrip />
+          <IdentityStrip variant="secondary" />
           <AroundClubSection />
-          <IdentityStrip />
+          <IdentityStrip variant="primary" />
           <PalmaresPreview />
-          <IdentityStrip />
+          <IdentityStrip variant="secondary" />
           <NewsletterSignup />
         </div>
       </main>
